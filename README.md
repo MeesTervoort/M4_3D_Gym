@@ -1,3 +1,3 @@
 # M4_3D_Gym
 
-![alt text](github pic/sunsetNcrates.png)
+![alt text](./github%20pic/sunsetNcrates.png)
