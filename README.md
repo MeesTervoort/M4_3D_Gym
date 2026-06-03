@@ -6,3 +6,6 @@ De speler zal van de grond in de zijwaardze container naar de container met de b
 heb de input laten werken als het goed is :D
 ze kunnen springen trust
 ![alt text](./img/Player_input_test.gif)
+
+animatios werken :D
+![alt text](./img/Recording%202026-06-03%20101948.gif)
