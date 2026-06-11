@@ -9,3 +9,6 @@ ze kunnen springen trust
 
 animatios werken :D
 ![alt text](./img/Recording%202026-06-03%20101948.gif)
+
+input character werkd :3
+![alt text](./img/PlayerCharacterMovement.gif)
