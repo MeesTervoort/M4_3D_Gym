@@ -14,8 +14,7 @@ public class InputPlayer : MonoBehaviour
     private InputAction sprintAction;
 
     private Rigidbody rb;
-    private bool Grounded = false;
-    private Animator animator;
+    private bool isGrounded = false;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float groundCheckRadius = 0.2f;
 
@@ -26,7 +25,6 @@ public class InputPlayer : MonoBehaviour
         jumpAction = map.FindAction("Jump");
         sprintAction = map.FindAction("Sprint");
         rb = GetComponent<Rigidbody>();
-        animator = GetComponent<Animator>();
     }
 
     void OnEnable() { input.FindActionMap(mapName).Enable(); }
@@ -54,10 +52,10 @@ public class InputPlayer : MonoBehaviour
 
 
         // Springen
-        if (jumpAction.WasPressedThisFrame() && Grounded)
+        if (jumpAction.WasPressedThisFrame() && isGrounded)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            Grounded = false;
+            isGrounded = false;
         }
 
         if (jumpAction.WasPressedThisFrame() && IsGrounded())
@@ -65,21 +63,18 @@ public class InputPlayer : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
 
-        animator.SetFloat("Speed", walkSpeed);
-        animator.SetBool("Grounded", Grounded);
-
     }
 
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
-            Grounded = true;
+            isGrounded = true;
     }
 
     void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
-            Grounded = false;
+            isGrounded = false;
     }
 
     private bool IsGrounded()
@@ -91,7 +86,6 @@ public class InputPlayer : MonoBehaviour
             groundLayer
         );
     }
-
 }
 
 
