@@ -12,3 +12,6 @@ animatios werken :D
 
 de charactermomevent werkt >:3
 ![alt text](./img/PlayerCharacterMovement.gif)
+
+Les 5 en de camera werkt + overview
+![alt text](./img/Recording%202026-06-17%20103518.gif)
